@@ -1,2 +1,1 @@
-# Vidly
-Cursus ASP.NET
+# vidly-mvc-5
