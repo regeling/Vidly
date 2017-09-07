@@ -273,6 +273,10 @@
     <Compile Include="Migrations\201709061709342_HomeBuild.Designer.cs">
       <DependentUpon>201709061709342_HomeBuild.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709070644533_UpdateMembershipTypeNames.cs" />
+    <Compile Include="Migrations\201709070644533_UpdateMembershipTypeNames.Designer.cs">
+      <DependentUpon>201709070644533_UpdateMembershipTypeNames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -350,7 +354,8 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Movie\Details.cshtml" />
-    <Content Include="Views\Customer\New.cshtml" />
+    <Content Include="Views\Customer\CustomerForm.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -398,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709061709342_HomeBuild.resx">
       <DependentUpon>201709061709342_HomeBuild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709070644533_UpdateMembershipTypeNames.resx">
+      <DependentUpon>201709070644533_UpdateMembershipTypeNames.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
