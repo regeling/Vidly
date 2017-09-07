@@ -1,7 +1,6 @@
-﻿using System.Web.Optimization;
-
-namespace Vidly
+﻿namespace Vidly
 {
+    using System.Web.Optimization;
 
     public class BundleConfig
     {

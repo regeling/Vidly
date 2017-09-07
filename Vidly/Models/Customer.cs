@@ -1,8 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace Vidly.Models
+﻿namespace Vidly.Models
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+
     public class Customer
     {
         public int Id { get; set; }

@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Linq;
 using Vidly.Models;
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -22,6 +23,16 @@ namespace Vidly.Controllers
         {
             var movies = _context.Movies.Include(c => c.Genre).ToList();
             return View(movies);
+        }
+
+        public ActionResult New()
+        {
+            var genres = _context.Genres.ToList();
+            var viewModel = new MovieViewModel
+            {
+                Genres = genres
+            };
+            return View("New", viewModel);
         }
 
         public ActionResult Details(int id)
