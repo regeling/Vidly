@@ -26,5 +26,7 @@
         [Required]
         [Display(Name = "Numbers in Stock")]
         public byte NumberInStock { get; set; }
+
+        // this is a test
     }
 }
