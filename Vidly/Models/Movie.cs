@@ -21,12 +21,11 @@
         [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
+        [Required]
         public DateTime DateAdded { get; set; }
 
         [Required]
         [Display(Name = "Numbers in Stock")]
         public byte NumberInStock { get; set; }
-
-        // this is a test
     }
 }
