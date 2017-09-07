@@ -285,6 +285,14 @@
     <Compile Include="Migrations\201709071029449_AfterMovieNewForm.Designer.cs">
       <DependentUpon>201709071029449_AfterMovieNewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709071247061_CustomerFix.cs" />
+    <Compile Include="Migrations\201709071247061_CustomerFix.Designer.cs">
+      <DependentUpon>201709071247061_CustomerFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709071330207_CustomerNewFieldsForValidation.cs" />
+    <Compile Include="Migrations\201709071330207_CustomerNewFieldsForValidation.Designer.cs">
+      <DependentUpon>201709071330207_CustomerNewFieldsForValidation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -292,6 +300,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -421,6 +430,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709071029449_AfterMovieNewForm.resx">
       <DependentUpon>201709071029449_AfterMovieNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071247061_CustomerFix.resx">
+      <DependentUpon>201709071247061_CustomerFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071330207_CustomerNewFieldsForValidation.resx">
+      <DependentUpon>201709071330207_CustomerNewFieldsForValidation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
