@@ -8,6 +8,7 @@ namespace Vidly.Controllers
 {
     public class MovieController : Controller
     {
+        #region Root
         private readonly ApplicationDbContext _context;
         public MovieController()
         {
@@ -18,12 +19,13 @@ namespace Vidly.Controllers
         {
             _context.Dispose();
         }
+        #endregion
 
         public ActionResult Index()
         {
             var movies = _context.Movies.Include(c => c.Genre).ToList();
             return View(movies);
-        }
+        }        
 
         public ActionResult New()
         {
@@ -32,7 +34,7 @@ namespace Vidly.Controllers
             {
                 Genres = genres
             };
-            return View("New", viewModel);
+            return View("MovieForm", viewModel);
         }
 
         public ActionResult Details(int id)
