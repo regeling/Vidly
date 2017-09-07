@@ -3,12 +3,12 @@ using System.Web.Mvc;
 using System.Linq;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System;
 
 namespace Vidly.Controllers
 {
     public class MovieController : Controller
     {
-        #region Root
         private readonly ApplicationDbContext _context;
         public MovieController()
         {
@@ -19,7 +19,6 @@ namespace Vidly.Controllers
         {
             _context.Dispose();
         }
-        #endregion
 
         public ActionResult Index()
         {
@@ -56,6 +55,26 @@ namespace Vidly.Controllers
                 Genres = _context.Genres.ToList()
             };
             return View("MovieForm", viewModel);
+        }
+
+        public ActionResult Save(Movie movie)
+        {
+            if (movie.Id == 0)
+            {
+                movie.DateAdded = DateTime.Now;
+                _context.Movies.Add(movie);
+            }
+            else
+            {
+                var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
+                movieInDb.Name = movie.Name;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+                movieInDb.GenreId = movie.GenreId;
+                movieInDb.NumberInStock = movie.NumberInStock;
+            }
+
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Movie");
         }
     }
 }
