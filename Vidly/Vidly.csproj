@@ -293,6 +293,22 @@
     <Compile Include="Migrations\201709071330207_CustomerNewFieldsForValidation.Designer.cs">
       <DependentUpon>201709071330207_CustomerNewFieldsForValidation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709071345238_AddingASummaryToView.cs" />
+    <Compile Include="Migrations\201709071345238_AddingASummaryToView.Designer.cs">
+      <DependentUpon>201709071345238_AddingASummaryToView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709071348472_UpdateCustomer.cs" />
+    <Compile Include="Migrations\201709071348472_UpdateCustomer.Designer.cs">
+      <DependentUpon>201709071348472_UpdateCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709071433085_UpdatingDateAddedAndNumbersInStockWithValidation.cs" />
+    <Compile Include="Migrations\201709071433085_UpdatingDateAddedAndNumbersInStockWithValidation.Designer.cs">
+      <DependentUpon>201709071433085_UpdatingDateAddedAndNumbersInStockWithValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709071458020_BeforeBuildingWebAPI.cs" />
+    <Compile Include="Migrations\201709071458020_BeforeBuildingWebAPI.Designer.cs">
+      <DependentUpon>201709071458020_BeforeBuildingWebAPI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -436,6 +452,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709071330207_CustomerNewFieldsForValidation.resx">
       <DependentUpon>201709071330207_CustomerNewFieldsForValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071345238_AddingASummaryToView.resx">
+      <DependentUpon>201709071345238_AddingASummaryToView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071348472_UpdateCustomer.resx">
+      <DependentUpon>201709071348472_UpdateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071433085_UpdatingDateAddedAndNumbersInStockWithValidation.resx">
+      <DependentUpon>201709071433085_UpdatingDateAddedAndNumbersInStockWithValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071458020_BeforeBuildingWebAPI.resx">
+      <DependentUpon>201709071458020_BeforeBuildingWebAPI.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
