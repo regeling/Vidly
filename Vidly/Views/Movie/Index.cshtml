@@ -21,20 +21,13 @@ else
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    @foreach (var movie in Model)
+            @foreach (var movie in Model)
                 {
-                    <p>@Html.ActionLink(movie.Name, "Details", "Movie", new { id = movie.Id }, null)</p>
-                }
-            </td>
-            <td>
-                @foreach (var movie in Model)
-                {
-                <p>@movie.Genre.Name</p>
+                <tr>
+                    <td>@Html.ActionLink(movie.Name, "Edit", "Movie", new { id = movie.Id }, null)</td>
+                    <td>@movie.Genre.Name</td>
+                </tr>
             }
-        </td>
-    </tr>
-</tbody>
-</table>
+        </tbody>
+    </table>
 }
