@@ -239,6 +239,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
+    <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -347,6 +348,18 @@
     <Compile Include="Migrations\201709081226107_UpdateDatabaseWithCustomers.cs" />
     <Compile Include="Migrations\201709081226107_UpdateDatabaseWithCustomers.Designer.cs">
       <DependentUpon>201709081226107_UpdateDatabaseWithCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709081250388_BeforeAuthorization.cs" />
+    <Compile Include="Migrations\201709081250388_BeforeAuthorization.Designer.cs">
+      <DependentUpon>201709081250388_BeforeAuthorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709081256397_AfterMovieFancier.cs" />
+    <Compile Include="Migrations\201709081256397_AfterMovieFancier.Designer.cs">
+      <DependentUpon>201709081256397_AfterMovieFancier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709081303575_AfterMovies.cs" />
+    <Compile Include="Migrations\201709081303575_AfterMovies.Designer.cs">
+      <DependentUpon>201709081303575_AfterMovies.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -690,6 +703,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709081226107_UpdateDatabaseWithCustomers.resx">
       <DependentUpon>201709081226107_UpdateDatabaseWithCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709081250388_BeforeAuthorization.resx">
+      <DependentUpon>201709081250388_BeforeAuthorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709081256397_AfterMovieFancier.resx">
+      <DependentUpon>201709081256397_AfterMovieFancier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709081303575_AfterMovies.resx">
+      <DependentUpon>201709081303575_AfterMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
