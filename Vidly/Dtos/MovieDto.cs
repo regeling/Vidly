@@ -1,8 +1,8 @@
-﻿namespace Vidly.Dtos
-{
-    using System;
-    using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
+namespace Vidly.Dtos
+{
     public class MovieDto
     {
         public int Id { get; set; }

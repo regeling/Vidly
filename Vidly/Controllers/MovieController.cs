@@ -1,12 +1,13 @@
-﻿namespace Vidly.Controllers
-{
-    using System.Data.Entity;
-    using System.Web.Mvc;
-    using System.Linq;
-    using Models;
-    using ViewModels;
-    using System;
+﻿using System.Data.Entity;
+using System.Web.Mvc;
+using System.Linq;
+using Vidly.Models;
+using Vidly.ViewModels;
+using System;
+using System.Data.Entity.Validation;
 
+namespace Vidly.Controllers
+{
     public class MovieController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -22,14 +23,9 @@
 
         public ActionResult Index()
         {
-            if (User.IsInRole(RoleName.CanManageMovies))
-            {
-                return View("List");
-            }
-            return View("ReadOnlyList");
+            return View();
         }        
 
-        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
@@ -50,7 +46,6 @@
             return View(movies);
         }
 
-        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(m => m.Id == id);

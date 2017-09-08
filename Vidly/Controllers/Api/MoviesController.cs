@@ -1,14 +1,14 @@
-﻿namespace Vidly.Controllers.Api
-{
-    using AutoMapper;
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Linq;
-    using System.Web.Http;
-    using Dtos;
-    using Models;
+﻿using AutoMapper;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Web.Http;
+using Vidly.Dtos;
+using Vidly.Models;
 
+namespace Vidly.Controllers.Api
+{
     public class MoviesController : ApiController
     {
         private ApplicationDbContext _context;
@@ -37,7 +37,6 @@
         }
 
         [HttpPost]
-        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult CreateMovie(MovieDto movieDto)
         {
             if (!ModelState.IsValid)
@@ -52,7 +51,6 @@
         }
 
         [HttpPut]
-        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)
         {
             if (!ModelState.IsValid)
@@ -71,7 +69,6 @@
         }
 
         [HttpDelete]
-        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult DeleteMovie(int id)
         {
             var movieInDb = _context.Movies.SingleOrDefault(c => c.Id == id);
