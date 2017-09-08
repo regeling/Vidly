@@ -1,11 +1,11 @@
-﻿using System.Data.Entity;
-using System.Linq;
-using System.Web.Mvc;
-using Vidly.Models;
-using Vidly.ViewModels;
-
-namespace Vidly.Controllers
+﻿namespace Vidly.Controllers
 {
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Web.Mvc;
+    using Models;
+    using ViewModels;
+
     public class CustomerController : Controller
     {
         private ApplicationDbContext _context;
@@ -63,6 +63,7 @@ namespace Vidly.Controllers
             return RedirectToAction("Index", "Customer");
         }
 
+        [Authorize]
         public ViewResult Index()
         {
             return View();
