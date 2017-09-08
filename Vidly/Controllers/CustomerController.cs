@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
-using System.Web.Mvc;
 using System.Linq;
+using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
 
@@ -8,7 +8,7 @@ namespace Vidly.Controllers
 {
     public class CustomerController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private ApplicationDbContext _context;
 
         public CustomerController()
         {
@@ -28,6 +28,7 @@ namespace Vidly.Controllers
                 Customer = new Customer(),
                 MembershipTypes = membershipTypes
             };
+
             return View("CustomerForm", viewModel);
         }
 
@@ -42,20 +43,19 @@ namespace Vidly.Controllers
                     Customer = customer,
                     MembershipTypes = _context.MembershipTypes.ToList()
                 };
+
                 return View("CustomerForm", viewModel);
             }
 
             if (customer.Id == 0)
-            {
                 _context.Customers.Add(customer);
-            }
             else
             {
-                var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == customer.Id);
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
                 customerInDb.Name = customer.Name;
-                customerInDb.BirthDate = customer.BirthDate;
+                customerInDb.Birthdate = customer.Birthdate;
                 customerInDb.MembershipTypeId = customer.MembershipTypeId;
-                customerInDb.IsSubscripedToNewsletter = customer.IsSubscripedToNewsletter;
+                customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
             }
 
             _context.SaveChanges();
@@ -65,17 +65,15 @@ namespace Vidly.Controllers
 
         public ViewResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
-            return View(customers);
+            return View();
         }
 
         public ActionResult Details(int id)
         {
             var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);
-            if(customer == null)
-            {
+
+            if (customer == null)
                 return HttpNotFound();
-            }
 
             return View(customer);
         }
@@ -85,9 +83,7 @@ namespace Vidly.Controllers
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customer == null)
-            {
-                HttpNotFound();
-            }
+                return HttpNotFound();
 
             var viewModel = new CustomerFormViewModel
             {
