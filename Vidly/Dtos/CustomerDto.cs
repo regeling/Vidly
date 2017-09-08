@@ -1,9 +1,9 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using Vidly.Models;
-
-namespace Vidly.Dtos
+﻿namespace Vidly.Dtos
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using Models;
+
     public class CustomerDto
     {
         public int Id { get; set; }

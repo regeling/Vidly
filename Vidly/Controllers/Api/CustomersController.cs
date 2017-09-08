@@ -1,13 +1,13 @@
-﻿using AutoMapper;
-using System;
-using System.Data.Entity;
-using System.Linq;
-using System.Web.Http;
-using Vidly.Dtos;
-using Vidly.Models;
-
-namespace Vidly.Controllers.Api
+﻿namespace Vidly.Controllers.Api
 {
+    using AutoMapper;
+    using System;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Web.Http;
+    using Dtos;
+    using Models;
+
     public class CustomersController : ApiController
     {
         private ApplicationDbContext _context;
