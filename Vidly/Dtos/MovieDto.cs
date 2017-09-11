@@ -22,5 +22,7 @@
 
         [Range(1, 20)]
         public byte NumberInStock { get; set; }
+
+
     }
 }

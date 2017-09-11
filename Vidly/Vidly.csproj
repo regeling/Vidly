@@ -254,12 +254,40 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
+    <Compile Include="Controllers\Api\NewRentalsController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
+    <Compile Include="Dtos\NewRentalDto.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
+    <Compile Include="Migrations\201709110953473_AddRental.cs" />
+    <Compile Include="Migrations\201709110953473_AddRental.Designer.cs">
+      <DependentUpon>201709110953473_AddRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709111011345_AddingNumberAvailable.cs" />
+    <Compile Include="Migrations\201709111011345_AddingNumberAvailable.Designer.cs">
+      <DependentUpon>201709111011345_AddingNumberAvailable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709111013139_RemoveAvailability.cs" />
+    <Compile Include="Migrations\201709111013139_RemoveAvailability.Designer.cs">
+      <DependentUpon>201709111013139_RemoveAvailability.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709111014088_AddAvailability.cs" />
+    <Compile Include="Migrations\201709111014088_AddAvailability.Designer.cs">
+      <DependentUpon>201709111014088_AddAvailability.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709111016463_AddMoreOptionsToMovie.cs" />
+    <Compile Include="Migrations\201709111016463_AddMoreOptionsToMovie.Designer.cs">
+      <DependentUpon>201709111016463_AddMoreOptionsToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709111239102_BeforeCleanUp.cs" />
+    <Compile Include="Migrations\201709111239102_BeforeCleanUp.Designer.cs">
+      <DependentUpon>201709111239102_BeforeCleanUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleName.cs" />
-    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MovieController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
@@ -521,10 +549,15 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Content\typeahead.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -535,6 +568,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -610,6 +645,12 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -646,14 +687,15 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
-    <Content Include="Views\Customer\Index.cshtml" />
-    <Content Include="Views\Customer\Details.cshtml" />
-    <Content Include="Views\Movie\Details.cshtml" />
-    <Content Include="Views\Customer\CustomerForm.cshtml" />
-    <Content Include="Views\Customer\Create.cshtml" />
-    <Content Include="Views\Movie\MovieForm.cshtml" />
-    <Content Include="Views\Movie\List.cshtml" />
-    <Content Include="Views\Movie\ReadOnlyList.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
+    <Content Include="Views\Movies\List.cshtml" />
+    <Content Include="Views\Movies\ReadOnlyList.cshtml" />
+    <Content Include="Views\Rentals\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -758,6 +800,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709110734124_AfterExerciseAddPhoneSeparationClasses.resx">
       <DependentUpon>201709110734124_AfterExerciseAddPhoneSeparationClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709110953473_AddRental.resx">
+      <DependentUpon>201709110953473_AddRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111011345_AddingNumberAvailable.resx">
+      <DependentUpon>201709111011345_AddingNumberAvailable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111013139_RemoveAvailability.resx">
+      <DependentUpon>201709111013139_RemoveAvailability.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111014088_AddAvailability.resx">
+      <DependentUpon>201709111014088_AddAvailability.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111016463_AddMoreOptionsToMovie.resx">
+      <DependentUpon>201709111016463_AddMoreOptionsToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111239102_BeforeCleanUp.resx">
+      <DependentUpon>201709111239102_BeforeCleanUp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
