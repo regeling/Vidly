@@ -9,7 +9,6 @@
     using Dtos;
     using Models;
 
-    [Authorize(Roles = RoleName.CanManageMovies)]
     public class MoviesController : ApiController
     {
         private ApplicationDbContext _context;
@@ -22,7 +21,7 @@
         public IEnumerable<MovieDto> GetMovies(string query = null)
         {
             var moviesQuery = _context.Movies
-                .Include(mbox => mbox.Genre)
+                .Include(m => m.Genre)
                 .Where(m => m.NumberAvailable > 0);
 
             if (!String.IsNullOrWhiteSpace(query))

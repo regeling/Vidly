@@ -60,7 +60,7 @@
 
             _context.SaveChanges();
 
-            return RedirectToAction("Index", "Customer");
+            return RedirectToAction("Index", "Customers");
         }
 
         [Authorize]

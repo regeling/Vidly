@@ -1,4 +1,5 @@
-﻿namespace Vidly.Controllers
+﻿using System;
+namespace Vidly.Controllers
 {
     using System.Web.Mvc;
 

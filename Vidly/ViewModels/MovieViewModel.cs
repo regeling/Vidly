@@ -17,6 +17,7 @@ namespace Vidly.ViewModels
             Name = movie.Name;
             ReleaseDate = movie.ReleaseDate;
             NumberInStock = movie.NumberInStock;
+            
             GenreId = movie.GenreId;
         }
 
@@ -48,5 +49,7 @@ namespace Vidly.ViewModels
                 return Id != 0 ? "Edit Movie" : "New Movie";
             }
         }
+
+        public byte NumberAvailable { get; set; }
     }
 }

@@ -9,7 +9,7 @@
 
     public class MoviesController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private ApplicationDbContext _context;
         public MoviesController()
         {
             _context = new ApplicationDbContext();
@@ -20,7 +20,7 @@
             _context.Dispose();
         }
 
-        public ActionResult Index()
+        public ViewResult Index()
         {
             if (User.IsInRole(RoleName.CanManageMovies))
             {
@@ -30,7 +30,7 @@
         }        
 
         [Authorize(Roles = RoleName.CanManageMovies)]
-        public ActionResult New()
+        public ViewResult New()
         {
             var genres = _context.Genres.ToList();
             var viewModel = new MovieViewModel
@@ -91,9 +91,10 @@
                 movieInDb.ReleaseDate = movie.ReleaseDate;
                 movieInDb.GenreId = movie.GenreId;
                 movieInDb.NumberInStock = movie.NumberInStock;
+                movieInDb.NumberAvailable = movie.NumberAvailable;
             }
             _context.SaveChanges();
-            return RedirectToAction("Index", "Movie");
+            return RedirectToAction("Index", "Movies");
         }
     }
 }

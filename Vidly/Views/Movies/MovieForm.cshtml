@@ -6,7 +6,7 @@
 
 <h2>@Model.Title</h2>
 
-@using (Html.BeginForm("Save", "Movie"))
+@using (Html.BeginForm("Save", "Movies"))
 {
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
@@ -35,5 +35,5 @@
 
 @section scripts
 {
-    @Scripts.Render("~/bundles/jqueryval");
+    @Scripts.Render("~/bundles/jqueryval")
 }

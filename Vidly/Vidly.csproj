@@ -52,6 +52,10 @@
       <HintPath>..\packages\AutoMapper.4.1.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Glimpse.Ado, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Glimpse.Ado.1.7.3\lib\net45\Glimpse.Ado.dll</HintPath>
       <Private>True</Private>
@@ -282,6 +286,14 @@
     <Compile Include="Migrations\201709111239102_BeforeCleanUp.Designer.cs">
       <DependentUpon>201709111239102_BeforeCleanUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709111335045_Tester1.cs" />
+    <Compile Include="Migrations\201709111335045_Tester1.Designer.cs">
+      <DependentUpon>201709111335045_Tester1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709111452573_AddingFiles.cs" />
+    <Compile Include="Migrations\201709111452573_AddingFiles.Designer.cs">
+      <DependentUpon>201709111452573_AddingFiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
@@ -440,6 +452,7 @@
     <Compile Include="ViewModels\CustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
@@ -818,6 +831,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709111239102_BeforeCleanUp.resx">
       <DependentUpon>201709111239102_BeforeCleanUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111335045_Tester1.resx">
+      <DependentUpon>201709111335045_Tester1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111452573_AddingFiles.resx">
+      <DependentUpon>201709111452573_AddingFiles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
