@@ -3,13 +3,6 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class ExternalLoginConfirmationViewModel
-    {
-        [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-    }
-
     public class ExternalLoginListViewModel
     {
         public string ReturnUrl { get; set; }
@@ -67,6 +60,11 @@
         [Required]
         [Display(Name = "Driving License")]
         public string DrivingLicense { get; set; }
+
+        // ADDED
+        [Required]
+        [Display(Name = "Phone")]
+        public string TelephoneNumber { get; set; }
 
         [Required]
         [EmailAddress]

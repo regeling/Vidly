@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44339</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -365,11 +365,21 @@
     <Compile Include="Migrations\201709081419360_AddingDrivingLicense.Designer.cs">
       <DependentUpon>201709081419360_AddingDrivingLicense.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709110713575_AddingTelephoneNumberToRegistration.cs" />
+    <Compile Include="Migrations\201709110713575_AddingTelephoneNumberToRegistration.Designer.cs">
+      <DependentUpon>201709110713575_AddingTelephoneNumberToRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709110734124_AfterExerciseAddPhoneSeparationClasses.cs" />
+    <Compile Include="Migrations\201709110734124_AfterExerciseAddPhoneSeparationClasses.Designer.cs">
+      <DependentUpon>201709110734124_AfterExerciseAddPhoneSeparationClasses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="Models\Genre.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
@@ -722,6 +732,12 @@
     <EmbeddedResource Include="Migrations\201709081419360_AddingDrivingLicense.resx">
       <DependentUpon>201709081419360_AddingDrivingLicense.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709110713575_AddingTelephoneNumberToRegistration.resx">
+      <DependentUpon>201709110713575_AddingTelephoneNumberToRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709110734124_AfterExerciseAddPhoneSeparationClasses.resx">
+      <DependentUpon>201709110734124_AfterExerciseAddPhoneSeparationClasses.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -741,7 +757,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62881</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62881/</IISUrl>
+          <IISUrl>https://localhost:44339/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
