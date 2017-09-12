@@ -82,6 +82,7 @@
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
+                movie.NumberAvailable = movie.NumberInStock;
                 _context.Movies.Add(movie);
             }
             else
@@ -91,7 +92,7 @@
                 movieInDb.ReleaseDate = movie.ReleaseDate;
                 movieInDb.GenreId = movie.GenreId;
                 movieInDb.NumberInStock = movie.NumberInStock;
-                movieInDb.NumberAvailable = movie.NumberAvailable;
+                movieInDb.NumberAvailable = movie.NumberAvailable;                
             }
             _context.SaveChanges();
             return RedirectToAction("Index", "Movies");

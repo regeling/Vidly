@@ -294,6 +294,14 @@
     <Compile Include="Migrations\201709111452573_AddingFiles.Designer.cs">
       <DependentUpon>201709111452573_AddingFiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709120634261_Test001.cs" />
+    <Compile Include="Migrations\201709120634261_Test001.Designer.cs">
+      <DependentUpon>201709120634261_Test001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709120724448_TestRick.cs" />
+    <Compile Include="Migrations\201709120724448_TestRick.Designer.cs">
+      <DependentUpon>201709120724448_TestRick.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
@@ -837,6 +845,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709111452573_AddingFiles.resx">
       <DependentUpon>201709111452573_AddingFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709120634261_Test001.resx">
+      <DependentUpon>201709120634261_Test001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709120724448_TestRick.resx">
+      <DependentUpon>201709120724448_TestRick.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

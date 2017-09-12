@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.ReleaseDate)
-        @Html.TextBoxFor(m => m.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.ReleaseDate, "{0:dd/MM/yyyy}", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.ReleaseDate)
     </div>
     <div class="form-group">
@@ -27,6 +27,15 @@
         @Html.LabelFor(m => m.NumberInStock)
         @Html.TextBoxFor(m => m.NumberInStock, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.NumberInStock)
+    </div>
+    <div class="form-group">
+        @*Only display the availability when a movie is being edit.*@
+        @if (Model.Title != "New Movie")
+        {
+            @Html.LabelFor(m => m.NumberAvailable)
+            @Html.TextBoxFor(m => m.NumberAvailable, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.NumberAvailable)
+        }        
     </div>
     @Html.HiddenFor(m => m.Id)
     @Html.AntiForgeryToken();

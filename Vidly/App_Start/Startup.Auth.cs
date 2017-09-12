@@ -58,7 +58,7 @@ namespace Vidly
                appId: "173435283218032",
                appSecret: "c74844f4459bbe74834d139de705c4ba");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            // app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
             //    ClientId = "",
             //    ClientSecret = ""

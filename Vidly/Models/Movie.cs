@@ -29,6 +29,8 @@
         [Range(1, 20)]
         public byte NumberInStock { get; set; }
 
+        [Required]
+        [Display(Name = "Availability")]
         public byte NumberAvailable { get; set; }
     }
 }

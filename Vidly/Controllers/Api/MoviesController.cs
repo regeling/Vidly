@@ -21,8 +21,7 @@
         public IEnumerable<MovieDto> GetMovies(string query = null)
         {
             var moviesQuery = _context.Movies
-                .Include(m => m.Genre)
-                .Where(m => m.NumberAvailable > 0);
+                .Include(m => m.Genre);
 
             if (!String.IsNullOrWhiteSpace(query))
             {
@@ -56,6 +55,7 @@
             _context.SaveChanges();
 
             movieDto.Id = movie.Id;
+                        
             return Created(new Uri(Request.RequestUri + "/" + movie.Id), movieDto);
         }
 
